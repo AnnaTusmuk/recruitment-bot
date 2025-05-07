@@ -1,12 +1,10 @@
 services:
-  - type: web
+  - type: worker
     name: recruitment-bot
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python bot.py"
     envVars:
       - key: BOT_TOKEN
-        value: "${BOT_TOKEN}"
-    plan: free
-    regions:
-      - "us"
+        sync: false
+
