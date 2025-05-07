@@ -6,7 +6,9 @@ from db import init_db, add_candidate, get_all_candidates
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = "YOUR_BOT_TOKEN"
+import os
+TOKEN = os.getenv("BOT_TOKEN")
+
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
